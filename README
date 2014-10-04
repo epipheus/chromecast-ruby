@@ -1,0 +1,45 @@
+= ruby-chromecast
+
+A simple Ruby library you can use to monitor and control basic features of
+your Chromecast.
+
+== Quick start
+
+Install the gem:
+
+ gem install ruby-chromecast
+
+Or add it to your Gemfile:
+
+ gem "chromecast"
+
+Generate a certificate to be used for TLS connetion:
+
+ rake setup:certificate
+
+Use it:
+
+ c = Chromecast::Connection.new(CHROMECAST_IP).open
+ c.connection.connect
+
+ while true
+   msg = c.read
+
+   puts msg
+
+   if msg['type'] == 'PING'
+     c.heartbeat.pong
+   end
+ end
+
+== To Do
+
+* Scanning for devices
+* EventMachine support
+* Proper documentation
+* Tests
+* Support for more namespaces
+
+== License
+
+This gem is released under the {MIT License}[http://www.opensource.org/licenses/MIT].
