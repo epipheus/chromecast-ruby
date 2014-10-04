@@ -1,4 +1,4 @@
-= ruby-chromecast
+= chromecast
 
 A simple Ruby library you can use to monitor and control basic features of
 your Chromecast.
@@ -7,7 +7,7 @@ your Chromecast.
 
 Install the gem:
 
- gem install ruby-chromecast
+ gem install chromecast
 
 Or add it to your Gemfile:
 
@@ -15,9 +15,11 @@ Or add it to your Gemfile:
 
 Generate a certificate to be used for TLS connetion:
 
- rake setup:certificate
+ bundle exec rake setup:certificate
 
 Use it:
+
+ require 'chromecast'
 
  c = Chromecast::Connection.new(CHROMECAST_IP).open
  c.connection.connect
