@@ -19,13 +19,13 @@ Gem::Specification.new do |s|
     "lib/chromecast/application.rb",
     "lib/chromecast/channel.rb",
     "protocol.proto",
-    "README",
+    "README.rdoc",
     "chromecast.gemspec"
   ]
   s.email       = "robert@kapati.net"
   s.homepage    = "http://robzon.pl/"
   s.license     = "MIT"
 
-  s.add_runtime_dependency 'ruby-tls', '>= 1.0.3'
-  s.add_runtime_dependency 'protobuf', '>= 3.3.5'
+  s.add_runtime_dependency 'ruby-tls', '~> 1.0'
+  s.add_runtime_dependency 'protobuf', '~> 3.3'
 end
